@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&family=Russo+One&display=swap');
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	/*--col : #19454E;*/
+	--col : #266471;
+	/*--background: #103E46;*/
+	--background: #092d33;
+}
+body,html{
+	height: 100%;
+	width: 100%;
+	overflow-x: hidden;
+	background: #14444E;
+	font-family: 'Poppins', sans-serif;
+}
+.container{
+	position: relative;
+	width: calc(100% - 10px);
+	margin-top: 5px;
+	margin-right: 5px;
+	margin-left: 5px;
+	min-height: calc(100vh - 5px);
+	display: grid;
+	grid-template-rows: 33% 33% 33%;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-areas: 
+		"box1 box2 box2 box3"
+		"box4 box5 box6 box3"
+		"box7 box7 box6 box8"
+	;
+}
+/*Responsive*/
+@media screen and (max-width: 1040px){
+	.container{
+		position: relative;
+		width: calc(100% - 20px);
+		margin: 10px;
+		min-height: calc(100vh - 10px);
+		display: grid;
+		grid-template-rows: 300px 300px 300px 300px;
+		grid-template-columns: calc(calc(100% - 10px) / 3) calc(calc(100% - 10px) / 3) calc(calc(100% - 10px) / 3);
+		grid-template-areas: 
+			"box2 box2 box1"
+			"box3 box4 box5"
+			"box3 box6 box6"
+			"box7 box7 box8"
+		;
+	}
+}
+@media screen and (max-width: 830px){
+	.container{
+		position: relative;
+		width: calc(100% - 20px);
+		margin: 10px;
+		min-height: calc(100vh - 20px);
+		display: grid;
+		grid-template-rows: 250px 250px 250px 250px 250px 250px;
+		grid-template-columns: calc(100% / 2) calc(100% / 2);
+		grid-template-areas: 
+			"box1 box4"
+			"box5 box2"
+			"box3 box2"
+			"box3 box6"
+			"box8 box6"
+			"box7 box7"
+		;
+	}
+}
+@media screen and (max-width: 580px){
+	.container{
+		position: relative;
+		width: calc(100% - 30px);
+		margin: 20px 15px;
+		min-height: calc(100vh - 40px);
+		display: grid;
+		grid-row-gap: 10px;
+		grid-template-columns: 1fr;
+        grid-template-rows: minmax(250px,auto);
+        grid-template-areas: 
+            "box1"
+            "box2"
+            "box3" 
+            "box4"
+            "box5"
+            "box6"
+            "box7"
+            "box8"
+        ;
+	}
+	div.container div.textBox{
+        position: relative;
+        width: 100%;
+        height: 250px;
+        padding: 30px 25px;
+    }
+    .container div.textBox{
+    	padding: 30px 25px !important;
+    }
+}
+
+/*==================================All Style for TextBoxes====================================*/
+.container div.textBox{
+	background: red;
+	margin: 5px;
+	padding: 30px 25px 20px 25px;
+	word-break: break-all;
+	cursor: default;
+	background: var(--background);
+	color: var(--col);
+	transition: 0.5s;
+	box-shadow: 0px 0px 0px 2px #0003;
+}
+.container div.textBox:hover{
+	box-shadow: none;
+}
+.container div.textBox h3{
+	position: relative;
+	display: inline-block;
+	font-size: 23px;
+	word-spacing: 7px;
+	margin-bottom: 15px;
+	z-index: 3;
+	transition: 0.5s;
+	font-family: 'Russo One', sans-serif;
+	font-weight: normal;
+	letter-spacing: 2px;	
+}
+.container div.textBox:hover h3{
+	color: #fff;
+}
+.container div.textBox h3::before{
+	content: '';
+    position: absolute;
+    bottom: -2.5px;
+    left: -5%;
+    right: 20px;
+    width: 112%;
+    height: 1px !important;
+    background: #fff;
+    transition: 0.5s;
+    transform: scaleX(0);
+    transform-origin: left;
+}
+.container div.textBox:hover h3::before{
+	transform: scaleX(1);
+}
+.container div.textBox h3::after{
+	content: '';
+    position: absolute;
+    bottom: -6.5px;
+    left: -5%;
+    right: 20px;
+    width: 112%;
+    height: 1px !important;
+    background: #fff;
+    transition: 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+}
+.container div.textBox:hover h3::after{
+	transform: scaleX(1);
+}
+.container div.textBox p{
+	position: relative;
+	line-height: 20px;
+	letter-spacing: 1px;
+	z-index: 3;
+	transition: 0.5s;
+}
+.container div.textBox:hover p{
+	color: #fff;
+}
+.container div.textBox:nth-child(1){
+	grid-area: box1;
+}
+.container div.textBox:nth-child(2){
+	grid-area: box2;
+}
+.container div.textBox:nth-child(3){
+	grid-area: box3;
+}
+.container div.textBox:nth-child(4){
+	grid-area: box4;
+}
+.container div.textBox:nth-child(5){
+	grid-area: box5;
+}
+.container div.textBox:nth-child(6){
+	grid-area: box6;
+}
+.container div.textBox:nth-child(7){
+	grid-area: box7;
+}
+.container div.textBox:nth-child(8){
+	grid-area: box8;
+}
+
+/*==================================All Style for BTN====================================*/
+.container div.textBox .btn1{
+	position: relative;
+	box-sizing: unset;
+	display: inline-block;
+	padding: 5px 14px;
+	margin-top: 14px;
+	border: 1.25px solid var(--col);
+	color: var(--col);
+	text-decoration: none;
+	z-index: 3;
+	transition: 0.5s;
+	z-index: 5;
+}
+.container div.textBox .btn1::before{
+	content: '';
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	position: absolute;
+	z-index: -2;
+	transform: scaleX(0);
+	transition: 0.5s;
+}
+.container div.textBox:nth-child(even) .btn1::before{
+	transform-origin: right;
+}
+.container div.textBox:nth-child(odd) .btn1::before{
+	transform-origin: left;
+}
+.container div.textBox:hover a.btn1{
+	color: #fff;
+	border-color: #fff;
+}
+.container div.textBox .btn1:hover::before{
+	transform: scaleX(1);
+}
+.container div.textBox:hover .btn1:hover::before{
+	transform: scaleX(1);
+}
+.container div.textBox .btn1:hover{
+	color: #000;
+}
+.container div.textBox:hover .btn1:hover{
+	color: #000;
+}
+/*
+.container div.textBox .btn1:hover{
+	border-color: #fff;
+	background: #fff;
+	color: #000;
+}
+.container div.textBox:hover .btn1:hover{
+	border-color: #fff;
+	background: #fff;
+	color: #000;
+}
+*/
+/*==================================All Style for screen====================================*/
+.screen{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 0;
+	width: 0;
+	background: #f7337b;
+	z-index: 1;
+	transition: 0.5s;
+	pointer-events: none;
+}
